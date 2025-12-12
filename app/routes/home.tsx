@@ -23,7 +23,8 @@ export default function HomePage() {
     setProgress(["Summarizing article and selecting evaluator models..."]);
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/analyze/stream", {
+      // const response = await fetch("http://127.0.0.1:8000/analyze/stream", {
+      const response = await fetch("https://operationpluto.pythonanywhere.com/analyze/stream", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

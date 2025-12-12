@@ -121,7 +121,8 @@ export default function DataPage() {
   ];
 
   useEffect(() => {
-    fetch("http://localhost:8000/charts")
+    // fetch("http://localhost:8000/charts")
+    fetch("https://operationpluto.pythonanywhere.com/charts")
       .then((res) => res.json())
       .then((data) => {
         setChartData(data);
