@@ -53,7 +53,7 @@ export const Navbar: React.FC = () => {
         >
           <nav className="flex flex-col items-start space-y-3 p-4 text-sm text-gray-800">
             <a
-              href="/analyze"
+              href="/"
               className="w-full hover:underline"
               onClick={() => setIsOpen(false)}
             >
