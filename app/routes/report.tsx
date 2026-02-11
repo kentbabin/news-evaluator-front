@@ -2,10 +2,7 @@ import { useState, useEffect } from "react";
 import { Loader2, AlertCircle } from "lucide-react";
 
 interface ConsensusData {
-  article_perspective: string;
-  article_tone_language: string;
-  article_fairness: string;
-  article_headline_article: string;
+  article: {};
   publication_funding: string;
   publication_location: string;
   publication_ownership: string;
@@ -200,7 +197,7 @@ export default function ReportPage() {
                         <td className="px-6 py-4 text-sm">
                           <div className="flex flex-wrap gap-2">
                             {Array.isArray(result.consensus?.article_perspective) ? (
-                              result.consensus.article_perspective.map((item: string, i: number) => (
+                              result.consensus.article.perspective.map((item: string, i: number) => (
                                 <span
                                   key={i}
                                   className={`px-3 py-1 rounded-full text-xs font-medium ${getPerspectiveColor(
@@ -213,18 +210,18 @@ export default function ReportPage() {
                             ) : (
                               <span
                                 className={`px-3 py-1 rounded-full text-xs font-medium ${getPerspectiveColor(
-                                  result.consensus?.article_perspective || "N/A"
+                                  result.consensus?.article.perspective || "N/A"
                                 )}`}
                               >
-                                {result.consensus?.article_perspective || "N/A"}
+                                {result.consensus?.article.perspective || "N/A"}
                               </span>
                             )}
                           </div>
                         </td>
                         <td className="px-6 py-4 text-sm">
                           <div className="flex flex-wrap gap-2">
-                            {Array.isArray(result.consensus?.article_tone_language) ? (
-                              result.consensus.article_tone_language.map((item: string, i: number) => (
+                            {Array.isArray(result.consensus?.article.tone_language) ? (
+                              result.consensus.article.tone_language.map((item: string, i: number) => (
                                 <span
                                   key={i}
                                   className={`px-3 py-1 rounded-full text-xs font-medium ${getToneLanguageColor(
@@ -237,10 +234,10 @@ export default function ReportPage() {
                             ) : (
                               <span
                                 className={`px-3 py-1 rounded-full text-xs font-medium ${getToneLanguageColor(
-                                  result.consensus?.article_tone_language || "N/A"
+                                  result.consensus?.article.tone_language || "N/A"
                                 )}`}
                               >
-                                {result.consensus?.article_tone_language || "N/A"}
+                                {result.consensus?.article.tone_language || "N/A"}
                               </span>
                             )}
                           </div>
@@ -248,19 +245,19 @@ export default function ReportPage() {
                         <td className="px-6 py-4 text-sm">
                           <span
                             className={`px-3 py-1 rounded-full text-xs font-medium ${getHeadlineColor(
-                              result.consensus?.article_headline_article || "N/A"
+                              result.consensus?.article.headline_article || "N/A"
                             )}`}
                           >
-                            {result.consensus?.article_headline_article || "N/A"}
+                            {result.consensus?.article.headline_article || "N/A"}
                           </span>
                         </td>
                         <td className="px-6 py-4 text-sm">
                           <span
                             className={`px-3 py-1 rounded-full text-xs font-medium ${getFairnessColor(
-                              result.consensus?.article_fairness || "N/A"
+                              result.consensus?.article.fairness || "N/A"
                             )}`}
                           >
-                            {result.consensus?.article_fairness || "N/A"}
+                            {result.consensus?.article.fairness || "N/A"}
                           </span>
                         </td>
                         <td className="px-6 py-4 text-sm text-gray-700">
